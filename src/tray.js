@@ -26,9 +26,12 @@ exports.setNotificationCount = function(count) {
 		return;
 	}
 
-	let image = basePath;
 	if (count > 0) {
-		image += 'skype24-1.png';
+		if (count >= 99) {
+			image += 'skype-tray99.png';
+		} else {
+			image += 'skype-tray' + count + '.png';
+		}
 		mainWindow.flashFrame(true);
 		if (Settings.get('OpenWhenMessaged')) {
 			mainWindow.show();
