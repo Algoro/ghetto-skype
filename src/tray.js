@@ -25,7 +25,7 @@ exports.setNotificationCount = function(count) {
 	if (count === lastCount) {
 		return;
 	}
-
+	let image = basePath;
 	if (count > 0) {
 		if (count >= 99) {
 			image += 'skype-tray99.png';
