@@ -25,14 +25,14 @@ exports.init = function(window) {
 };
 
 function setTrayCount(count) {
-	image = nativeImage.createFromPath(iconPath);
-	data = image.toDataURL();
-	htmlImage = new Canvas.Image(image.width, image.height);
+	let image = nativeImage.createFromPath(iconPath);
+	var data = image.toDataURL();
+	let htmlImage = new Canvas.Image(image.width, image.height);
 	htmlImage.src = data;
-	canvas = new Canvas(image.width, image.width);
+	let canvas = new Canvas(image.width, image.width);
 	canvas.width = image.width;
 	canvas.height = image.height;
-	ctx = canvas.getContext('2d');
+	let ctx = canvas.getContext('2d');
 	ctx.drawImage(htmlImage, 0, 0);
 	x = canvas.width / 3 * 2;
 	y = canvas.height / 3 * 2;
