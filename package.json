@@ -23,7 +23,7 @@
     "postinstall": "install-app-deps",
     "pack": "build --dir",
     "dist": "build",
-    "start": "electron src/"
+    "start": "electron --inspect-brk src/main.js"
   },
   "repository": {
     "type": "git",
@@ -39,9 +39,11 @@
   },
   "homepage": "https://github.com/stanfieldr/ghetto-skype#readme",
   "devDependencies": {
-    "canvas": "^1.6.5",
     "electron": "^1.4.13",
-    "electron-builder": "^10.15.1",
-    "electron-rebuild": "^1.4.0"
+    "electron-builder": "^10.15.1"
+  },
+  "dependencies": {
+    "canvas": "^1.6.5",
+    "electron-rebuild": "^1.5.11"
   }
 }
