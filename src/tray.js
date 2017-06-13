@@ -4,7 +4,6 @@ const path     = require('path');
 const fs       = require('fs');
 const nativeImage = require('electron').nativeImage;
 const Canvas = require('canvas');
-const nodeConsole = require('console')
 
 const BrowserWindow = electron.BrowserWindow;
 
@@ -26,14 +25,11 @@ exports.init = function(window) {
 };
 
 function setTrayCount(count) {
-	console = new nodeConsole.Console(process.stdout, process.stderr);
 	let image = nativeImage.createFromPath(iconPath);
 	var data = image.toDataURL();
 	let htmlImage = new Canvas.Image(image.getSize().width, image.getSize().height);
 	htmlImage.src = data;
 	let canvas = new Canvas(htmlImage.width, htmlImage.height);
-	//canvas.width = 24;
-	//canvas.height = 24;
 	let ctx = canvas.getContext('2d');
 	ctx.drawImage(htmlImage, 0, 0);
 	x = canvas.width / 3 * 2;
